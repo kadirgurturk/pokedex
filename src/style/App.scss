@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;900&display=swap");
+body{
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom right,rgb(64, 57, 143), rgb(2, 122, 208));
+    background-size: contain;
+    min-height: 800px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Mulish", sans-serif;
+}
+.App{
+    .header{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h3{
+            color: #fff;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+        input{
+            outline: none;
+            border: none;
+            width: 55%;
+            height: 40px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            opacity: 0.9;
+        }
+        .typelist{
+            margin-bottom: 30px;
+            a{
+                margin-right: 5px;
+                padding: 5px;
+                border-radius: 4px;
+                opacity:.7;
+                transition: 200ms;
+                &:hover,&:active{
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+            
+        }
+    }
+    .list-pokemon{
+        margin: auto;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        gap: 12px;
+        .pokemon-card{
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 15px 15px;
+            img{
+                height: 120px;
+            }
+            .pokemon-title{
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 9px;
+            }
+            .pokemon-id{
+                margin-bottom: 10px;
+            }
+            .pokemon-type{
+                font-weight: bold;
+                
+            }
+            
+        }
+    }
+    .popup{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .poke_card{
+            display: flex;
+            flex-direction: row;
+            height: 40%;
+            width: 40%;
+            border-radius: 15px;
+            align-items: center;
+            justify-content: center;
+            .card_img{
+                background-color: 	rgb(255,255,255,0.5);
+                border-radius: 50%;
+                img{
+                    height: 220px;
+                }
+            }
+            .card_info{
+                background-color: 	rgb(255,255,255,0.8);
+                border-radius: 5px;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                width: 40%;
+                margin-left: 35px;
+                .card_types{
+                    
+                    .type-card{
+                        padding: 4px 8px ;
+                        border: 1px solid rgba(88, 88, 88, 0.2) ;
+                        border-radius: 25%;
+                        margin:0 6px ;
+                        box-shadow: 3px 3px 4px rgba(88, 88, 88, 0.2);
+                    }
+                }
+                .card-stats{
+                    width: 80%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    .stat{
+                        width: 30%;
+                        padding: 4px 0;
+                        border-radius: 15%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid rgba(88, 88, 88, 0.2);
+                        box-shadow: 3px 3px 4px rgba(88, 88, 88, 0.2);
+                    }
+                }
+            }
+            
+        }   
+        
+    }
+
+
+}
