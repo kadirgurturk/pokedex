@@ -17,7 +17,7 @@ const TypeList = () =>{
     return(
         <div className="typelist">
             <a type="button" style={{backgroundColor: "lightgrey"}} onClick={()=>{dis(changeType(""))}} >All</a>
-            {typesList.map(type =>(<a key={type.type} type="button" style={{backgroundColor: colors[type.type], opacity : selectedType === type.type ? "1" : "0.6"}} onClick={()=>{dis(changeType(type.type))}}>{type.type}</a>))}
+            {typesList.map(type =>(<a key={type.type} type="button" style={{backgroundColor: colors[type.type], opacity : selectedType === type.type ? "1" : "0.6",cursor:"pointer"}} onClick={()=>{dis(changeType(type.type))}}>{type.type}</a>))}
         </div>
     )
 } 

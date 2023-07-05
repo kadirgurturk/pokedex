@@ -1,5 +1,5 @@
 import {changePoke} from "../Reducers/PokeCardReducer"
-import { useSelector,useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 
 const Pokecard = ({pokemon,colors}) =>{

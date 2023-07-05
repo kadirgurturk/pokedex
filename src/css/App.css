@@ -51,7 +51,7 @@ body {
   opacity: 0.7;
   transition: 200ms;
 }
-.App .header .typelist a:hover, .App .header .typelist a:active {
+.App .header .typelist a:hover {
   opacity: 1;
   cursor: pointer;
 }
@@ -69,6 +69,11 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px 15px 15px;
+  cursor: pointer;
+}
+.App .list-pokemon .pokemon-card:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 .App .list-pokemon .pokemon-card img {
   height: 120px;

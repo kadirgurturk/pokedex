@@ -5,13 +5,13 @@ class PokemonService {
 
     getList(season)
     {
-        return axios.get("list/" + season)
+        return axios.get("list/?gen=" + season)
     }
 
     getPokebyId(id)
     {
-        return axios.get(id)
+        return axios.get("/?id=" + id)
     }
 }
 
-export default new PokemonService;
+export default new PokemonService();

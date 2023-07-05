@@ -8,10 +8,21 @@ import PokeService from "../services/PokeService";
 
 const Pokelist = () =>{
 
+    const { isLoading, data, isError } = useQuery(`poke-service`, () => {
+        return PokeService.getList(2);
+      });
+
+      useEffect(() => {
+        if (data?.data) {
+          setPokemos(data.data.pokes);
+        }
+      }, [data]);
+
+
+      console.log(data?.data);
     
     const [colors,setColors] = useState([]);
     const [pokemons,setPokemos] = useState([]);
-    const url = "https://pokeapi.co/api/v2/pokemon/"
 
     const pokeCard = useSelector(state => state.pokeCard.pokecard)
     const text = useSelector(state => state.text.text);
@@ -24,28 +35,36 @@ const Pokelist = () =>{
        
     },[]);
 
-    const { isLoading, data, isError } = useQuery(`post-comment`, () => {
-        return PokeService.getList(1);
-      });
-
-      useEffect(()=>{
-        setPokemos(data?.data)
-      },[data])
 
     let PokeList = () =>{
-        if(text === "" & type === ""){
-            return pokemons;
-        }else if(type === ""){
-            return pokemons.filter(pokemon => pokemon.name.includes(text))
-        }else if(text === ""){
-           
-            return pokemons.filter(pokemon => pokemon.types.some(typ => { return typ.type.name === type}))
-        }else{
-            return pokemons.filter(pokemon => { return pokemon.types.some(typ => { return typ.type.name === type}) & pokemon.name.includes(text)})
+        let filteredPokemons = pokemons;
+
+        if (text !== "" && type !== "") {
+          filteredPokemons = pokemons.filter(
+            (pokemon) =>
+              pokemon.types.some((typ) => typ.type.name === type) &&
+              pokemon.name.includes(text)
+          );
+        } else if (text !== "") {
+          filteredPokemons = pokemons.filter((pokemon) =>
+            pokemon.name.includes(text)
+          );
+        } else if (type !== "") {
+          filteredPokemons = pokemons.filter((pokemon) =>
+            pokemon.types.some((typ) => typ.type.name === type)
+          );
         }
+      
+        return filteredPokemons;
     }
 
-
+    if (isLoading) {
+        return <h2>Loading...</h2>;
+      }
+    
+      if (isError) {
+        return <h2>Error 404</h2>;
+      }
     
 
     return(

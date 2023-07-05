@@ -1,4 +1,4 @@
-import './style/App.css';
+import './css/App.css';
 import Header from './component/Header';
 import Pokelist from './component/Pokelist';
 

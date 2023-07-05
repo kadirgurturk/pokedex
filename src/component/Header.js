@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { changeText } from "../Reducers/SearchText";
 import TypeList from "./TypeList";
-
 
 
 
