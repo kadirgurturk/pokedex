@@ -1,14 +1,21 @@
 # Pokedax App
 
-#### Pokedax App 128 pokemonu listeleyen ve seçtiğimiz birinin özelliklerine daha yakından baktığımız bir uygulamadır.
+#### The Pokedax App is an application that lists 128 Pokémon and allows us to take a closer look at the characteristics of the one we choose. Additionally, we can sort that list by name and types as well..
 
 <img src="./ReadmeImg/pkx0.png" height="256">
 
-## Metotlar ve Teknolojiler
-#### Uygulama React kütüphanesi ile yazılmıştır. Uygualamda styling için Sass, state yönetimi İçin Redux kullanılmıştır. Uygulama başladığında her bir pokemon için api'ye istek yapılır, gelen data state'e aktarılır ve listelenir. Listeleme filtrelenebilir, isime göre ve pokemon tipine göre ayrı ayrı yada birlikte listelenen Pokemonlar filtrelinebilir. Listelenen pokemonlardan birine tıkladğınızda o pokemonun daha ayrıntılı özelliklerinin verildiği bir popup ekrana basılır. Popup dan çıkmak için popup dışındaki bir yere tıklamanız yeterlidir.
+## Methhodlgy and Used Techs
+- This application build by reactjs libary
+- Scss is used for styling and Redux-toolkit is used for store managment
 
 <img src="./ReadmeImg/pkx1.png" height="256">
 
 <img src="./ReadmeImg/pkx2.png" height="256">
 
 <img src="./ReadmeImg/pkx3.png" height="256">
+
+
+### The REST service, which this application sends requests to and retrieves the Pokémon list from, is implemented separately. Github link [here](https://github.com/kadirgurturk/spring-boot-resttemplate-pokemonapi.git)
+
+
+

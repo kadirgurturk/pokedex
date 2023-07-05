@@ -5,6 +5,7 @@ import {changePoke} from "../Reducers/PokeCardReducer"
 import Pokecard from "./PokeCard";
 import { useQuery } from 'react-query'
 import PokeService from "../services/PokeService";
+import Pokeball from "./Pokeball";
 
 const Pokelist = () =>{
 
@@ -19,7 +20,6 @@ const Pokelist = () =>{
       }, [data]);
 
 
-      console.log(data?.data);
     
     const [colors,setColors] = useState([]);
     const [pokemons,setPokemos] = useState([]);
@@ -59,7 +59,7 @@ const Pokelist = () =>{
     }
 
     if (isLoading) {
-        return <h2>Loading...</h2>;
+        return <Pokeball/>;
       }
     
       if (isError) {
