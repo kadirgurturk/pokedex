@@ -1,10 +1,10 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import colorsData from "../data/colors"
 import { useSelector,useDispatch } from "react-redux";
-import {changePoke,dropPoke} from "../Reducers/PokeCardReducer"
+import {changePoke} from "../Reducers/PokeCardReducer"
 import Pokecard from "./PokeCard";
-
-
+import { useQuery } from 'react-query'
+import PokeService from "../services/PokeService";
 
 const Pokelist = () =>{
 
@@ -21,10 +21,16 @@ const Pokelist = () =>{
 
     useLayoutEffect(()=>{
         setColors(colorsData)
-        for(let i = 1; i < 128; ++i){
-            fetch(`${url + i}`).then(data => data.json()).then(poke => setPokemos(pokemons => [...pokemons,poke]));
-        }
+       
     },[]);
+
+    const { isLoading, data, isError } = useQuery(`post-comment`, () => {
+        return PokeService.getList(1);
+      });
+
+      useEffect(()=>{
+        setPokemos(data?.data)
+      },[data])
 
     let PokeList = () =>{
         if(text === "" & type === ""){
@@ -38,6 +44,7 @@ const Pokelist = () =>{
             return pokemons.filter(pokemon => { return pokemon.types.some(typ => { return typ.type.name === type}) & pokemon.name.includes(text)})
         }
     }
+
 
     
 
