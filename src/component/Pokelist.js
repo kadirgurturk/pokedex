@@ -10,7 +10,7 @@ import Pokeball from "./Pokeball";
 const Pokelist = () =>{
 
     const { isLoading, data, isError } = useQuery(`poke-service`, () => {
-        return PokeService.getList(2);
+        return PokeService.getList(1);
       });
 
       useEffect(() => {
